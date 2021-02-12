@@ -1,0 +1,20 @@
+.allCode{
+    flex-direction: row;
+    display: flex;
+}
+
+nav{
+    padding:5px;
+    border-right: 2px;
+    border-right-style:solid;
+    border-right-color:darkblue;
+    flex: 1;
+}
+
+.main{
+    padding:5px;
+    border-right: 2px;
+    border-right-style:solid;
+    border-right-color:darkblue;
+    flex: 5;
+}
