@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import NotefulContext from './NotefulContext'
-import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export default class NavNoteView extends Component {
     static contextType = NotefulContext;
@@ -12,8 +12,14 @@ export default class NavNoteView extends Component {
             <div className='nav__noteView'>
                 <h2>{folder.name}</h2>
                 <button onClick={() => this.props.history.push(`/folders/${folderId}`)}>Go Back</button>
-                <Link to='/add-folder'>+ Add Folder</Link>
+                <button onClick={()=>this.props.history.push('/add-folder')}>+ Add Folder</button>
+                <button onClick={()=>this.props.history.push('/add-note')}>+ Add Note</button>
             </div>
         )
     }
+}
+
+NavNoteView.propTypes = {
+    folderId: PropTypes.string.isRequired,
+    history: PropTypes.object
 }

@@ -22,9 +22,6 @@ export default class App extends Component {
     state = {
         notes: [],
         folders: [],
-        //deleteNote: () => {},
-        //addFolder: () => {},
-        //addNote: () => {}
     }
 
     componentDidMount(){
@@ -212,14 +209,14 @@ export default class App extends Component {
                 <NotefulContext.Provider value={contextValue}>
                     <div className='app'>
                         <Link to='/'><h1>Noteful</h1></Link>
-                        <ErrorBoundary>
                             <nav>
-                                {this.navRoutes()}
+                                <ErrorBoundary>
+                                    {this.navRoutes()}
+                                </ErrorBoundary>
                             </nav>
                             <main>
                                 {this.mainRoutes()}
                             </main>
-                        </ErrorBoundary>
                     </div>
                 </NotefulContext.Provider>
             </BrowserRouter>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 //import {Route, Link, BrowserRouter} from 'react-router-dom';
 import NotefulContext from './NotefulContext'
+import PropTypes from 'prop-types';
 
 export default class NavNewFolder extends Component {
     static contextType = NotefulContext
@@ -17,4 +18,8 @@ export default class NavNewFolder extends Component {
             </div>
         )
     }
+}
+
+NavNewFolder.propTypes = {
+    history: PropTypes.object
 }

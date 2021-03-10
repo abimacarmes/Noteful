@@ -2,6 +2,7 @@ import React, { Component} from 'react'
 import {Link} from 'react-router-dom';
 import NotefulContext from './NotefulContext'
 
+
 export default class NoteListAll extends Component {
     static defaultProps = {
 
@@ -33,7 +34,6 @@ export default class NoteListAll extends Component {
                             ))}
                             
                         </ul>
-                        <Link to='/add-note'>+ Add Note</Link>
                     </div>
                 )}
             </NotefulContext.Consumer>

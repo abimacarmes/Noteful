@@ -15,7 +15,8 @@ export default class NavList extends Component {
                         </Link></li>
                     ))}
                 </ul>
-                <Link to='/add-folder'>+ Add Folder</Link>
+                <button onClick={()=>this.props.history.push('/add-folder')}>+ Add Folder</button>
+                <button onClick={()=>this.props.history.push('/add-note')}>+ Add Note</button>
             </div>
         )
     }

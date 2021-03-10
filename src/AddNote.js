@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 //import {Route, Link, BrowserRouter} from 'react-router-dom';
 import NotefulContext from './NotefulContext'
+import PropTypes from 'prop-types';
 
 export default class AddNote extends Component {
     static contextType = NotefulContext;
@@ -13,7 +14,7 @@ export default class AddNote extends Component {
 
     submitNewNote = event => {
         event.preventDefault();
-        if(!this.newNoteName.current.value){
+        if(!this.newNoteName.current.value || !this.newNoteText.current.value){
             
         }
         else{
@@ -40,4 +41,8 @@ export default class AddNote extends Component {
             </div>
         )
     }
+}
+
+AddNote.propTypes = {
+    history: PropTypes.object
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 //import {Route, Link, BrowserRouter} from 'react-router-dom';
 import NotefulContext from './NotefulContext'
+import PropTypes from 'prop-types';
 
 
 export default class Note extends Component {
@@ -27,3 +28,9 @@ export default class Note extends Component {
         )
     }
 }
+
+Note.PropTypes = {
+    noteId: PropTypes.string.isRequired,
+    history: PropTypes.object
+}
+
