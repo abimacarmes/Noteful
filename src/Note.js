@@ -29,7 +29,7 @@ export default class Note extends Component {
     }
 }
 
-Note.PropTypes = {
+Note.propTypes = {
     noteId: PropTypes.string.isRequired,
     history: PropTypes.object
 }
