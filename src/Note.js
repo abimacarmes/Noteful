@@ -30,7 +30,11 @@ export default class Note extends Component {
 }
 
 Note.propTypes = {
-    noteId: PropTypes.string.isRequired,
-    history: PropTypes.object
+    match: PropTypes.shape({
+        params: PropTypes.shape({
+            noteId: PropTypes.string.isRequired,
+            history: PropTypes.object
+        })
+    }) 
 }
 

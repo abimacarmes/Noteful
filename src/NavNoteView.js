@@ -20,6 +20,10 @@ export default class NavNoteView extends Component {
 }
 
 NavNoteView.propTypes = {
-    folderId: PropTypes.string.isRequired,
-    history: PropTypes.object
+    match: PropTypes.shape({
+        params: PropTypes.shape({
+            folderId: PropTypes.string.isRequired,
+            history: PropTypes.object
+        })
+    })  
 }
