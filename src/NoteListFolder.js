@@ -37,5 +37,9 @@ export default class NoteListFolder extends Component {
 }
 
 NoteListFolder.propTypes = {
-    folderId: PropTypes.string.isRequired,
+    match: PropTypes.shape({
+        params: PropTypes.shape({
+            folderId: PropTypes.string.isRequired,
+        })
+    }) 
 }

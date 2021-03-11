@@ -11,11 +11,16 @@ export default class AddNote extends Component {
         this.newNoteText = React.createRef();
         this.newNoteFolder = React.createRef();
     }
+    state = {
+        errorMsg: ''
+    }
 
     submitNewNote = event => {
         event.preventDefault();
         if(!this.newNoteName.current.value || !this.newNoteText.current.value){
-            
+            this.setState({
+                errorMsg: 'Note Name and Content are required and cannot be blank.'
+            })
         }
         else{
             this.context.addNote(this.newNoteName.current.value,this.newNoteText.current.value,this.newNoteFolder.current.value);
@@ -30,12 +35,14 @@ export default class AddNote extends Component {
                 <form onSubmit={this.submitNewNote}>
                     <label>Name:</label>
                     <input type='text' id='folder-name-input'ref={this.newNoteName}></input>
+                    <label>Content:</label>
                     <textarea ref={this.newNoteText}></textarea>
                     <select ref={this.newNoteFolder}>
                         {this.context.folders.map(folder => (
                             <option value={folder.name}>{folder.name}</option>
                         ))}
                     </select>
+                    <h3>{this.state.errorMsg}</h3>
                     <button type='submit'>Submit</button>
                 </form>
             </div>

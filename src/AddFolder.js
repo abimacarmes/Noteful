@@ -9,12 +9,17 @@ export default class AddFolder extends Component {
         super(props);
         this.newFolderName = React.createRef();
     }
+    state = {
+        errorMsg: ''
+    }
 
     submitNewFolder = event => {
         event.preventDefault();
         const newFolderName = this.newFolderName.current.value;
         if(!newFolderName){
-            
+            this.setState({
+                errorMsg: 'Folder name is required and cannot be blank.'
+            })
         }
         else{
             this.context.addFolder(newFolderName);
@@ -29,6 +34,7 @@ export default class AddFolder extends Component {
                 <form onSubmit={this.submitNewFolder}>
                     <label>Name:</label>
                     <input type='text' id='folder-name-input'ref={this.newFolderName}></input>
+                    <h3>{this.state.errorMsg}</h3>
                     <button type='submit'>Submit</button>
                 </form>
             </div>
