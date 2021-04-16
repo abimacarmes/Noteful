@@ -7,6 +7,7 @@ import {
 import 'typeface-roboto'
 import App from './App'
 
+
 library.add(faPlus, faChevronLeft, faTrashAlt, faCheckDouble)
 
 ReactDOM.render(

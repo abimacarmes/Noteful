@@ -25,11 +25,12 @@ export default class App extends Component {
     }
 
     componentDidMount(){
-        fetch('http://localhost:9090/notes')
+        fetch('https://obscure-hollows-57839.herokuapp.com/notes')
         .then(notesResult => {
             if(!notesResult.ok){
                 throw new Error('Something went wrong.');
             }
+            console.log(notesResult)
             return notesResult.json()
         })
         .then(notesJson => {
@@ -41,7 +42,7 @@ export default class App extends Component {
             console.log(error.message)
         )
 
-        fetch('http://localhost:9090/folders')
+        fetch('https://obscure-hollows-57839.herokuapp.com/folders')
         .then(foldersResult => {
             if(!foldersResult.ok){
                 throw new Error('Something went wrong.');
@@ -65,7 +66,7 @@ export default class App extends Component {
             notes: newNotes
         });
 
-        fetch(`http://localhost:9090/notes/${noteId}`, {
+        fetch(`https://obscure-hollows-57839.herokuapp.com/notes/${noteId}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'
@@ -93,13 +94,13 @@ export default class App extends Component {
             folder: oldFolders
         })
 
-        fetch(`http://localhost:9090/folders/`, {
+        fetch(`https://obscure-hollows-57839.herokuapp.com/folders/`, {
             method: 'POST',
             headers: {
               'content-type': 'application/json',
             },
             body: JSON.stringify({
-                "id":`${this.generateID()}-ffaf-11e8-8eb2-f2801f1b9fd1`,
+                "folderid":`${this.generateID()}-ffaf-11e8-8eb2-f2801f1b9fd1`,
                 'name': folderName
             })
           }
@@ -135,7 +136,7 @@ export default class App extends Component {
             notes: oldNotes
         })
 
-        fetch(`http://localhost:9090/notes/`, {
+        fetch(`https://obscure-hollows-57839.herokuapp.com/notes/`, {
             method: 'POST',
             headers: {
               'content-type': 'application/json',
