@@ -5,7 +5,7 @@ import {
   faPlus, faChevronLeft, faTrashAlt, faCheckDouble
 } from '@fortawesome/free-solid-svg-icons'
 import 'typeface-roboto'
-import App from './App'
+import App from './src/App'
 
 
 library.add(faPlus, faChevronLeft, faTrashAlt, faCheckDouble)
