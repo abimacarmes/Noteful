@@ -24,8 +24,8 @@ export default class NoteListAll extends Component {
                     <div>
                         <ul className="noteListAll">
                             {this.context.notes.map(note => (
-                                <li key={note.id}><Link to={`folders/${note.folderId}/notes/${note.id}`}>
-                                    {note.name}
+                                <li key={note.id}><Link to={`folders/${note.folderid}/notes/${note.id}`}>
+                                    {note.name}<br/>
                                     {' '}
                                     Last Modified: {note.modified}
                                 </Link>

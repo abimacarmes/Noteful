@@ -21,7 +21,8 @@ export default class Note extends Component {
         return (
             <div>
                 <h2>{note.name}</h2>
-                <h3>Last Modified:{note.modified.substring(0,10)}</h3>
+                <hr/>
+                <h3>Last Modified: {note.modified.substring(0,10)}</h3>
                 <button id={noteId} onClick={this.onPushDelete}>Delete</button>
                 <p>{note.content}</p>
             </div>

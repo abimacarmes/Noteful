@@ -206,8 +206,10 @@ export default class App extends Component {
         return(
             <BrowserRouter>
                 <NotefulContext.Provider value={contextValue}>
-                    <div className='app'>
+                    <header>
                         <Link to='/'><h1>Noteful</h1></Link>
+                    </header>
+                    <div className='app'>
                             <nav>
                                 <ErrorBoundary>
                                     {this.navRoutes()}

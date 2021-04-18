@@ -7,7 +7,9 @@ export default class NavNoteView extends Component {
 
     render() {
         const {folderId} = this.props.match.params;
-        const folder = this.context.folders.find(folder => folder.id === folderId);
+        const folder = this.context.folders.find(folder => folder.folderid === folderId);
+        console.log(this.context.folders)
+
         return (
             <div className='nav__noteView'>
                 <h2>{folder.name}</h2>

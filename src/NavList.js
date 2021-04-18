@@ -3,9 +3,7 @@ import {Link} from 'react-router-dom';
 import NotefulContext from './NotefulContext'
 
 export default class NavList extends Component {
-    static contextType = NotefulContext
-
-    
+    static contextType = NotefulContext 
 
     render() {      
         return (
