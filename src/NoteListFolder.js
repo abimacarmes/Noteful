@@ -14,7 +14,7 @@ export default class NoteListFolder extends Component {
 
     render() {    
         const folderId = this.props.match.params.folderId
-        const filteredNotes = this.context.notes.filter(note => note.folderId === folderId)
+        const filteredNotes = this.context.notes.filter(note => note.folderid === folderId)
         
         return (
             <NotefulContext.Consumer>

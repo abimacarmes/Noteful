@@ -5,12 +5,14 @@ import NotefulContext from './NotefulContext'
 export default class NavList extends Component {
     static contextType = NotefulContext
 
-    render() {        
+    
+
+    render() {      
         return (
             <div>
                 <ul>
                     {this.context.folders.map(folder =>(
-                        <li key={folder.id}><Link to={`/folders/${folder.id}`}>
+                        <li key={folder.folderid}><Link to={`/folders/${folder.folderid}`}>
                             {folder.name}
                         </Link></li>
                     ))}

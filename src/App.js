@@ -30,7 +30,6 @@ export default class App extends Component {
             if(!notesResult.ok){
                 throw new Error('Something went wrong.');
             }
-            console.log(notesResult)
             return notesResult.json()
         })
         .then(notesJson => {
@@ -159,9 +158,6 @@ export default class App extends Component {
         .catch(error => {
             console.log(error.message)
         })
-
-        console.log(this.state.notes)
-
     }
 
     generateID = () => {
@@ -178,6 +174,7 @@ export default class App extends Component {
         return(
             <>
                 <Route exact path='/' component={NoteListAll}/>
+                <Route exact path='/folders' component={NoteListAll}/>
                 <Route exact path='/folders/:folderId' component={NoteListFolder}/>
                 <Route path='/folders/:folderId/notes/:noteId' component={Note}/>
                 <Route path='/add-folder' component={AddFolder}/>
@@ -190,6 +187,7 @@ export default class App extends Component {
         return(
             <>
                 <Route exact path='/' component={NavList}/>
+                <Route exact path='/folders' component={NavList}/>
                 <Route exact path='/folders/:folderId' component={NavList}/>
                 <Route path='/folders/:folderId/notes/:noteId' component={NavNoteView}/>
                 <Route path='/add' component={NavNewNoteFolder}/>
