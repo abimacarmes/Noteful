@@ -19,15 +19,19 @@ main{
     flex: 5;
     border-color: #90CCF4;
     border-width: 6px;
+    background-color: #D4EBFA;
 }
 body{
     margin: 3px;
+    width: 1000px;
+    margin:auto;
 }
 
 nav{
     padding: 5px;
     border-color: #F3D250;
     border-width: 6px;
+    background-color: #F9F0CE;
 }
 
 ul{
@@ -55,9 +59,10 @@ button{
     border-radius: 30px;
     color: black;
     margin-bottom: 2px;
+    border-color: lightslategray;
 }
 
-h1{
+h1, h3{
     color: #E85A4F;
 }
 

@@ -8,6 +8,7 @@ export default class NavList extends Component {
     render() {      
         return (
             <div>
+                <h3>Folders:</h3>
                 <ul>
                     {this.context.folders.map(folder =>(
                         <li key={folder.folderid}><Link to={`/folders/${folder.folderid}`}>

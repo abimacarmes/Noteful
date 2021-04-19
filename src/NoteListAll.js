@@ -22,6 +22,7 @@ export default class NoteListAll extends Component {
             <NotefulContext.Consumer>
                 {(context) => (
                     <div>
+                        <h3>Notes:</h3>
                         <ul className="noteListAll">
                             {this.context.notes.map(note => (
                                 <li key={note.id}><Link to={`folders/${note.folderid}/notes/${note.id}`}>
