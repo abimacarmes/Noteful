@@ -15,22 +15,30 @@ export default class NoteListFolder extends Component {
     render() {    
         const folderId = this.props.match.params.folderId
         const filteredNotes = this.context.notes.filter(note => note.folderid === folderId)
+        const filteredFolder = this.context.folders.filter(folder => folder.folderid === folderId)
+        var folderName = ""
+
+        if(filteredFolder.length === 1){
+            folderName = filteredFolder[0].name
+        }
         
         return (
             <NotefulContext.Consumer>
-                {(context) => (
-                <ul className="noteListFolder"> 
-                    {filteredNotes.map(note => (
-                        <li key={note.id}><Link to={`${folderId}/notes/${note.id}`}>
-                            {note.name}
-                            {' '}
-                            Last Modified: {note.modified.substring(0,10)}   
-                        </Link>
-                        <button id={note.id} onClick={this.onPushDelete}>Delete</button>
-                        </li>
-                    ))}
-                </ul>
-                )}
+                    {(context) => (
+                    <ul className="noteListFolder"> 
+                        <h3>{folderName}</h3>
+                        <h4>{filteredNotes.length} notes in this folder</h4>
+                        {filteredNotes.map(note => (
+                            <li key={note.id}><Link to={`${folderId}/notes/${note.id}`}>
+                                {note.name}
+                                {' '}
+                                Last Modified: {note.modified.substring(0,10)}   
+                            </Link>
+                            <button id={note.id} onClick={this.onPushDelete}>Delete</button>
+                            </li>
+                        ))}
+                    </ul>
+                    )}
             </NotefulContext.Consumer>
         )
     }

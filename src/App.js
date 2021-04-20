@@ -120,14 +120,13 @@ export default class App extends Component {
         const oldNotes = this.state.notes
 
         const folder = this.state.folders.find(folder => folder.name === noteFolder)
-
-        const modified = new Date()
+        const modified = new Date().toLocaleString()
 
         oldNotes.push({
             "id":`${this.generateID()+"ffaf-11e8-8eb2-f2801f1b9fd1"}`,
             "name":`${noteName}`,
             "modified":`${modified}`,
-            "folderId":`${folder.id}`,
+            "folderid":`${folder.folderid}`,
             "content":`${noteText}`
         })
 
@@ -144,7 +143,7 @@ export default class App extends Component {
                 "id":`${this.generateID()}`,
                 "name":`${noteName}`,
                 "modified":`${modified}`,
-                "folderId":`${folder.id}`,
+                "folderid":`${folder.folderid}`,
                 "content":`${noteText}`
             })
           }
